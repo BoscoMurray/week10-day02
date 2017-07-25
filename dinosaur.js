@@ -4,5 +4,4 @@ var Dinosaur = function( type, offspring ) {
 }
 
 
-
 module.exports = Dinosaur;
