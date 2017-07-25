@@ -32,4 +32,11 @@ describe("Park", function() {
     assert.strictEqual( park.enclosure.length, 1 );
   })
 
+  it("can get dinosaurs with offspring greater than 2", function() {
+    park.addDinosaur(trex1);
+    park.addDinosaur(trex2);
+    park.addDinosaur(raptor);
+    assert.strictEqual( park.breaders().length, 1);
+  })
+
 })
