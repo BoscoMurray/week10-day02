@@ -39,4 +39,23 @@ describe("Park", function() {
     assert.strictEqual( park.breaders().length, 1);
   })
 
+  it("can get dinosaurs after 1 year, start 1 dinosaur", function() {
+    park.addDinosaur(raptor);
+    park.yearsPassed(1);
+    assert.strictEqual( park.enclosure.length, 4 );
+  })
+
+  it("can get dinosaurs after 2 year, start 1 dinosaur", function() {
+    park.addDinosaur(raptor);
+    park.yearsPassed(2);
+    assert.strictEqual( park.enclosure.length, 16 );
+  })
+
+  it("can get dinosaurs after 2 year, start 2 dinosaurs", function() {
+    park.addDinosaur(raptor);
+    park.addDinosaur(trex1);
+    park.yearsPassed(2);
+    assert.strictEqual( park.enclosure.length, 20 );
+  })
+
 })

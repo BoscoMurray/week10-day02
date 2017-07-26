@@ -26,4 +26,20 @@ Park.prototype.breaders = function() {
   return tempArray;
 }
 
+Park.prototype.yearsPassed = function(years) {
+  var tempArray = [];
+  for (var a = 0; a < years; a++) {
+    for (var b = 0; b < this.enclosure.length; b++) {
+      var quantityBabies = this.enclosure[b].offspring;
+      for (var c = 0; c < quantityBabies; c++) {
+        tempArray.push(this.enclosure[b]);
+      }
+    }
+    Array.prototype.push.apply(this.enclosure, tempArray);
+    tempArray = [];
+  }
+}
+
+
+
 module.exports = Park;
